@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS app_user;
+
+CREATE TABLE app_user (
+    ID UUID PRIMARY KEY,
+    NAME VARCHAR(250) NOT NULL,
+    USERNAME VARCHAR(250) NOT NULL,
+    SURNAME VARCHAR(250) NOT NULL,
+    PASSWORD VARCHAR(250) NOT NULL,
+    UNIQUE (USERNAME)
+);
+
+-- Optionally, explicitly create an index
+CREATE INDEX idx_username ON app_user(USERNAME);
